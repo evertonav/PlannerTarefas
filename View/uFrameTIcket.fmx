@@ -1,0 +1,228 @@
+﻿object FrameTicket: TFrameTicket
+  Align = Top
+  Size.Width = 313.000000000000000000
+  Size.Height = 169.000000000000000000
+  Size.PlatformDefault = False
+  object rtcContainer: TRectangle
+    Align = Top
+    Fill.Color = xFFFFF9B9
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    PopupMenu = ppmFuncoesTicket
+    Position.X = 2.000000000000000000
+    Position.Y = 2.000000000000000000
+    Size.Width = 309.000000000000000000
+    Size.Height = 167.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFFC7C7C7
+    object lytSuperiorContainer: TLayout
+      Align = Top
+      Size.Width = 309.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object lblTarefa: TLabel
+        Align = Left
+        StyledSettings = [Family, Size]
+        Margins.Left = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Size.Width = 41.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claGray
+        Text = 'Tarefa:'
+        TabOrder = 0
+      end
+    end
+    object lytMeioContainer: TLayout
+      Align = Client
+      Size.Width = 309.000000000000000000
+      Size.Height = 101.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object lblTituloTarefa: TLabel
+        Align = Client
+        StyledSettings = [Family, Size, Style]
+        Margins.Left = 4.000000000000000000
+        Size.Width = 305.000000000000000000
+        Size.Height = 101.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claGray
+        TextSettings.VertAlign = Leading
+        Text = 'Teste'
+        TabOrder = 1
+      end
+    end
+    object lytInferiorContainer: TLayout
+      Align = Bottom
+      Position.Y = 118.000000000000000000
+      Size.Width = 309.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object lytFimTarefa: TLayout
+        Align = Bottom
+        Position.Y = -1.000000000000000000
+        Size.Width = 309.000000000000000000
+        Size.Height = 16.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblDataFimTarefa: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, Style]
+          Size.Width = 233.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claGray
+          Text = '21:20:20'
+          TabOrder = 1
+        end
+        object lblFimTarefa: TLabel
+          Align = Left
+          StyledSettings = [Family, Size]
+          Margins.Left = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Size.Width = 72.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claGray
+          Text = 'Fim tarefa:'
+          TabOrder = 0
+        end
+      end
+      object lytInicioTarefa: TLayout
+        Align = Bottom
+        Position.Y = -18.000000000000000000
+        Size.Width = 309.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblInicioTarefa: TLabel
+          Align = Left
+          StyledSettings = [Family, Size]
+          Margins.Left = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Size.Width = 72.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claGray
+          Text = #205'nicio tarefa:'
+          TabOrder = 0
+        end
+        object lblDataInicioTarefa: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, Style]
+          Size.Width = 233.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claGray
+          Text = '21:20:20'
+          TabOrder = 1
+        end
+      end
+      object lytTempoEsforco: TLayout
+        Align = Bottom
+        Position.Y = 15.000000000000000000
+        Size.Width = 309.000000000000000000
+        Size.Height = 34.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lytEsforço: TLayout
+          Align = Client
+          Size.Width = 309.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object rtcContainerEsforço: TRectangle
+            Align = Client
+            Fill.Kind = None
+            Size.Width = 309.000000000000000000
+            Size.Height = 34.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = xFFD0D0D0
+            object lytFormatoHoras: TLayout
+              Align = Bottom
+              Position.Y = 17.000000000000000000
+              Size.Width = 309.000000000000000000
+              Size.Height = 17.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 2
+              object rbtHora: TRadioButton
+                Align = Left
+                StyledSettings = [Family, Size, Style]
+                Position.X = 76.000000000000000000
+                Size.Width = 70.000000000000000000
+                Size.Height = 17.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 2
+                Text = 'Hora'
+                TextSettings.FontColor = claGray
+                OnClick = rbtHoraClick
+              end
+              object rbtMinutos: TRadioButton
+                Align = Left
+                StyledSettings = [Family, Size, Style]
+                Position.X = 146.000000000000000000
+                Size.Width = 70.000000000000000000
+                Size.Height = 17.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 1
+                Text = 'Minutos'
+                TextSettings.FontColor = claGray
+                OnClick = rbtMinutosClick
+              end
+              object lblFormato: TLabel
+                Align = Left
+                StyledSettings = [Family, Size]
+                Margins.Left = 4.000000000000000000
+                Position.X = 4.000000000000000000
+                Size.Width = 72.000000000000000000
+                Size.Height = 17.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+                TextSettings.FontColor = claGray
+                Text = 'Formatar:'
+                TabOrder = 0
+              end
+            end
+            object lblEsforco: TLabel
+              Align = Left
+              StyledSettings = [Family, Size]
+              Margins.Left = 4.000000000000000000
+              Position.X = 4.000000000000000000
+              Size.Width = 72.000000000000000000
+              Size.Height = 17.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claGray
+              Text = 'Esfor'#231'o:'
+              TabOrder = 0
+            end
+            object lblTempoEsforco: TLabel
+              Align = Client
+              StyledSettings = [Family, Size, Style]
+              Size.Width = 233.000000000000000000
+              Size.Height = 17.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.FontColor = claGray
+              Text = '21:20:20'
+              TabOrder = 1
+            end
+          end
+        end
+      end
+    end
+  end
+  object ppmFuncoesTicket: TPopupMenu
+    Left = 138
+    Top = 75
+    object mniCalcularTotalEsforco: TMenuItem
+      Text = 'Calcular total esfor'#231'o'
+      OnClick = mniCalcularTotalEsforcoClick
+    end
+  end
+end

@@ -1,0 +1,753 @@
+object ViewPlanner: TViewPlanner
+  Left = 0
+  Top = 0
+  Caption = 'Planner'
+  ClientHeight = 480
+  ClientWidth = 1145
+  Position = DesktopCenter
+  WindowState = wsMaximized
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnResize = FormResize
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object tbcPlanner: TTabControl
+    Align = Client
+    Size.Width = 1145.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = None
+    Sizes = (
+      1145s
+      480s)
+    object tbiPlanner: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tbiPlanner'
+      ExplicitSize.cx = 70.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object rtcContainer: TRectangle
+        Align = Client
+        Fill.Color = xFFFDB4C8
+        Size.Width = 1145.000000000000000000
+        Size.Height = 439.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object lytContainer: TLayout
+          Align = Client
+          Size.Width = 1145.000000000000000000
+          Size.Height = 439.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object rtcContainerTarefas: TRectangle
+            Align = Client
+            Fill.Color = claWhite
+            Size.Width = 1145.000000000000000000
+            Size.Height = 439.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Kind = None
+            object lytContainerSegunda: TLayout
+              Align = Left
+              Size.Width = 137.000000000000000000
+              Size.Height = 439.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object lytTituloSegunda: TLayout
+                Align = Top
+                Size.Width = 137.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                object rtcTituloSegunda: TRectangle
+                  Align = Client
+                  Fill.Color = xFFFDB4C8
+                  Margins.Left = 3.000000000000000000
+                  Margins.Top = 3.000000000000000000
+                  Margins.Right = 3.000000000000000000
+                  Margins.Bottom = 3.000000000000000000
+                  Size.Width = 131.000000000000000000
+                  Size.Height = 44.000000000000000000
+                  Size.PlatformDefault = False
+                  Stroke.Kind = None
+                  XRadius = 10.000000000000000000
+                  YRadius = 10.000000000000000000
+                  object lytTituloDataEDiaSemana: TLayout
+                    Align = Client
+                    Size.Width = 131.000000000000000000
+                    Size.Height = 44.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object lblTituloSegunda: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Size]
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Segunda'
+                      TabOrder = 0
+                      object lneTituloSegunda: TLine
+                        Align = Bottom
+                        LineType = Bottom
+                        Margins.Left = 2.000000000000000000
+                        Margins.Right = 2.000000000000000000
+                        Margins.Bottom = -3.000000000000000000
+                        Position.X = 2.000000000000000000
+                        Position.Y = 23.000000000000000000
+                        Size.Width = 127.000000000000000000
+                        Size.Height = 2.000000000000000000
+                        Size.PlatformDefault = False
+                        Stroke.Color = claWhite
+                      end
+                    end
+                    object lblTituloDataSegunda: TLabel
+                      Align = Bottom
+                      StyledSettings = [Family, Size]
+                      Position.Y = 22.000000000000000000
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Dia bla'
+                      TabOrder = 1
+                    end
+                  end
+                end
+              end
+              object rtcTarefasSegunda: TRectangle
+                Align = Client
+                Fill.Color = xFFDBF1FF
+                Margins.Left = 4.000000000000000000
+                Margins.Top = 2.000000000000000000
+                Margins.Right = 2.000000000000000000
+                Margins.Bottom = 2.000000000000000000
+                Size.Width = 131.000000000000000000
+                Size.Height = 385.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                object vsbTarefaSegunda: TVertScrollBox
+                  Align = Client
+                  Size.Width = 131.000000000000000000
+                  Size.Height = 385.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 0
+                  Viewport.Width = 131.000000000000000000
+                  Viewport.Height = 385.000000000000000000
+                end
+              end
+            end
+            object lytContainerTerca: TLayout
+              Align = Left
+              Position.X = 137.000000000000000000
+              Size.Width = 137.000000000000000000
+              Size.Height = 439.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              object lytTituloTerca: TLayout
+                Align = Top
+                Size.Width = 137.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                object Rectangle4: TRectangle
+                  Align = Client
+                  Fill.Color = xFFFDB4C8
+                  Margins.Left = 3.000000000000000000
+                  Margins.Top = 3.000000000000000000
+                  Margins.Right = 3.000000000000000000
+                  Margins.Bottom = 3.000000000000000000
+                  Size.Width = 131.000000000000000000
+                  Size.Height = 44.000000000000000000
+                  Size.PlatformDefault = False
+                  Stroke.Kind = None
+                  XRadius = 10.000000000000000000
+                  YRadius = 10.000000000000000000
+                  object Layout10: TLayout
+                    Align = Client
+                    Size.Width = 131.000000000000000000
+                    Size.Height = 44.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object lblTituloTerca: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Size]
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Ter'#231'a'
+                      TabOrder = 0
+                      object Line4: TLine
+                        Align = Bottom
+                        LineType = Bottom
+                        Margins.Left = 2.000000000000000000
+                        Margins.Right = 2.000000000000000000
+                        Margins.Bottom = -3.000000000000000000
+                        Position.X = 2.000000000000000000
+                        Position.Y = 23.000000000000000000
+                        Size.Width = 127.000000000000000000
+                        Size.Height = 2.000000000000000000
+                        Size.PlatformDefault = False
+                        Stroke.Color = claWhite
+                      end
+                    end
+                    object lblTituloDataTerca: TLabel
+                      Align = Bottom
+                      StyledSettings = [Family, Size]
+                      Position.Y = 22.000000000000000000
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Dia bla'
+                      TabOrder = 1
+                    end
+                  end
+                end
+              end
+              object rtcTarefasTerca: TRectangle
+                Align = Client
+                Fill.Color = xFFDBF1FF
+                Margins.Left = 2.000000000000000000
+                Margins.Top = 2.000000000000000000
+                Margins.Right = 2.000000000000000000
+                Margins.Bottom = 2.000000000000000000
+                Size.Width = 133.000000000000000000
+                Size.Height = 385.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                object vsbTarefaTerca: TVertScrollBox
+                  Align = Client
+                  Size.Width = 133.000000000000000000
+                  Size.Height = 385.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 0
+                  Viewport.Width = 133.000000000000000000
+                  Viewport.Height = 385.000000000000000000
+                end
+              end
+            end
+            object lytContainerQuarta: TLayout
+              Align = Left
+              Position.X = 274.000000000000000000
+              Size.Width = 137.000000000000000000
+              Size.Height = 439.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 2
+              object lytTituloQuarta: TLayout
+                Align = Top
+                Size.Width = 137.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                object Rectangle6: TRectangle
+                  Align = Client
+                  Fill.Color = xFFFDB4C8
+                  Margins.Left = 3.000000000000000000
+                  Margins.Top = 3.000000000000000000
+                  Margins.Right = 3.000000000000000000
+                  Margins.Bottom = 3.000000000000000000
+                  Size.Width = 131.000000000000000000
+                  Size.Height = 44.000000000000000000
+                  Size.PlatformDefault = False
+                  Stroke.Kind = None
+                  XRadius = 10.000000000000000000
+                  YRadius = 10.000000000000000000
+                  object Layout8: TLayout
+                    Align = Client
+                    Size.Width = 131.000000000000000000
+                    Size.Height = 44.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object lblTituloQuarta: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Size]
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Quarta'
+                      TabOrder = 0
+                      object Line5: TLine
+                        Align = Bottom
+                        LineType = Bottom
+                        Margins.Left = 2.000000000000000000
+                        Margins.Right = 2.000000000000000000
+                        Margins.Bottom = -3.000000000000000000
+                        Position.X = 2.000000000000000000
+                        Position.Y = 23.000000000000000000
+                        Size.Width = 127.000000000000000000
+                        Size.Height = 2.000000000000000000
+                        Size.PlatformDefault = False
+                        Stroke.Color = claWhite
+                      end
+                    end
+                    object lblTituloDataQuarta: TLabel
+                      Align = Bottom
+                      StyledSettings = [Family, Size]
+                      Position.Y = 22.000000000000000000
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Dia bla'
+                      TabOrder = 1
+                    end
+                  end
+                end
+              end
+              object rtcTarefasQuarta: TRectangle
+                Align = Client
+                Fill.Color = xFFDBF1FF
+                Margins.Left = 2.000000000000000000
+                Margins.Top = 2.000000000000000000
+                Margins.Right = 2.000000000000000000
+                Margins.Bottom = 2.000000000000000000
+                Size.Width = 133.000000000000000000
+                Size.Height = 385.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                object vsbTarefaQuarta: TVertScrollBox
+                  Align = Client
+                  Size.Width = 133.000000000000000000
+                  Size.Height = 385.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 0
+                  Viewport.Width = 133.000000000000000000
+                  Viewport.Height = 385.000000000000000000
+                end
+              end
+            end
+            object lytContainerQuinta: TLayout
+              Align = Left
+              Position.X = 411.000000000000000000
+              Size.Width = 137.000000000000000000
+              Size.Height = 439.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 3
+              object lytTituloQuinta: TLayout
+                Align = Top
+                Size.Width = 137.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                object Rectangle1: TRectangle
+                  Align = Client
+                  Fill.Color = xFFFDB4C8
+                  Margins.Left = 3.000000000000000000
+                  Margins.Top = 3.000000000000000000
+                  Margins.Right = 3.000000000000000000
+                  Margins.Bottom = 3.000000000000000000
+                  Size.Width = 131.000000000000000000
+                  Size.Height = 44.000000000000000000
+                  Size.PlatformDefault = False
+                  Stroke.Kind = None
+                  XRadius = 10.000000000000000000
+                  YRadius = 10.000000000000000000
+                  object Layout4: TLayout
+                    Align = Client
+                    Size.Width = 131.000000000000000000
+                    Size.Height = 44.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object lblTituloQuinta: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Size]
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Quinta'
+                      TabOrder = 0
+                      object Line1: TLine
+                        Align = Bottom
+                        LineType = Bottom
+                        Margins.Left = 2.000000000000000000
+                        Margins.Right = 2.000000000000000000
+                        Margins.Bottom = -3.000000000000000000
+                        Position.X = 2.000000000000000000
+                        Position.Y = 23.000000000000000000
+                        Size.Width = 127.000000000000000000
+                        Size.Height = 2.000000000000000000
+                        Size.PlatformDefault = False
+                        Stroke.Color = claWhite
+                      end
+                    end
+                    object lblTituloDataQuinta: TLabel
+                      Align = Bottom
+                      StyledSettings = [Family, Size]
+                      Position.Y = 22.000000000000000000
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Dia bla'
+                      TabOrder = 1
+                    end
+                  end
+                end
+              end
+              object rtcTarefasQuinta: TRectangle
+                Align = Client
+                Fill.Color = xFFDBF1FF
+                Margins.Left = 2.000000000000000000
+                Margins.Top = 2.000000000000000000
+                Margins.Right = 2.000000000000000000
+                Margins.Bottom = 2.000000000000000000
+                Size.Width = 133.000000000000000000
+                Size.Height = 385.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                object vsbTarefaQuinta: TVertScrollBox
+                  Align = Client
+                  Size.Width = 133.000000000000000000
+                  Size.Height = 385.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 0
+                  Viewport.Width = 133.000000000000000000
+                  Viewport.Height = 385.000000000000000000
+                end
+              end
+            end
+            object lytContainerSexta: TLayout
+              Align = Left
+              Position.X = 548.000000000000000000
+              Size.Width = 137.000000000000000000
+              Size.Height = 439.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 4
+              object lytTituloSexta: TLayout
+                Align = Top
+                Size.Width = 137.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                object Rectangle3: TRectangle
+                  Align = Client
+                  Fill.Color = xFFFDB4C8
+                  Margins.Left = 3.000000000000000000
+                  Margins.Top = 3.000000000000000000
+                  Margins.Right = 3.000000000000000000
+                  Margins.Bottom = 3.000000000000000000
+                  Size.Width = 131.000000000000000000
+                  Size.Height = 44.000000000000000000
+                  Size.PlatformDefault = False
+                  Stroke.Kind = None
+                  XRadius = 10.000000000000000000
+                  YRadius = 10.000000000000000000
+                  object Layout6: TLayout
+                    Align = Client
+                    Size.Width = 131.000000000000000000
+                    Size.Height = 44.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object lblTituloSexta: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Size]
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Sexta'
+                      TabOrder = 0
+                      object Line2: TLine
+                        Align = Bottom
+                        LineType = Bottom
+                        Margins.Left = 2.000000000000000000
+                        Margins.Right = 2.000000000000000000
+                        Margins.Bottom = -3.000000000000000000
+                        Position.X = 2.000000000000000000
+                        Position.Y = 23.000000000000000000
+                        Size.Width = 127.000000000000000000
+                        Size.Height = 2.000000000000000000
+                        Size.PlatformDefault = False
+                        Stroke.Color = claWhite
+                      end
+                    end
+                    object lblTituloDataSexta: TLabel
+                      Align = Bottom
+                      StyledSettings = [Family, Size]
+                      Position.Y = 22.000000000000000000
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Dia bla'
+                      TabOrder = 1
+                    end
+                  end
+                end
+              end
+              object rtcTarefasSexta: TRectangle
+                Align = Client
+                Fill.Color = xFFDBF1FF
+                Margins.Left = 2.000000000000000000
+                Margins.Top = 2.000000000000000000
+                Margins.Right = 2.000000000000000000
+                Margins.Bottom = 2.000000000000000000
+                Size.Width = 133.000000000000000000
+                Size.Height = 385.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                object vsbTarefaSexta: TVertScrollBox
+                  Align = Client
+                  Size.Width = 133.000000000000000000
+                  Size.Height = 385.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 0
+                  Viewport.Width = 133.000000000000000000
+                  Viewport.Height = 385.000000000000000000
+                end
+              end
+            end
+            object lytContainerSabado: TLayout
+              Align = Left
+              Position.X = 685.000000000000000000
+              Size.Width = 137.000000000000000000
+              Size.Height = 439.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 5
+              object lytTituloSabado: TLayout
+                Align = Top
+                Size.Width = 137.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                object Rectangle9: TRectangle
+                  Align = Client
+                  Fill.Color = xFFFDB4C8
+                  Margins.Left = 3.000000000000000000
+                  Margins.Top = 3.000000000000000000
+                  Margins.Right = 3.000000000000000000
+                  Margins.Bottom = 3.000000000000000000
+                  Size.Width = 131.000000000000000000
+                  Size.Height = 44.000000000000000000
+                  Size.PlatformDefault = False
+                  Stroke.Kind = None
+                  XRadius = 10.000000000000000000
+                  YRadius = 10.000000000000000000
+                  object Layout12: TLayout
+                    Align = Client
+                    Size.Width = 131.000000000000000000
+                    Size.Height = 44.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object lblTituloSabado: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Size]
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'S'#225'bado'
+                      TabOrder = 0
+                      object Line3: TLine
+                        Align = Bottom
+                        LineType = Bottom
+                        Margins.Left = 2.000000000000000000
+                        Margins.Right = 2.000000000000000000
+                        Margins.Bottom = -3.000000000000000000
+                        Position.X = 2.000000000000000000
+                        Position.Y = 23.000000000000000000
+                        Size.Width = 127.000000000000000000
+                        Size.Height = 2.000000000000000000
+                        Size.PlatformDefault = False
+                        Stroke.Color = claWhite
+                      end
+                    end
+                    object lblTituloDataSabado: TLabel
+                      Align = Bottom
+                      StyledSettings = [Family, Size]
+                      Position.Y = 22.000000000000000000
+                      Size.Width = 131.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Dia bla'
+                      TabOrder = 1
+                    end
+                  end
+                end
+              end
+              object rtcTarefasSabado: TRectangle
+                Align = Client
+                Fill.Color = xFFDBF1FF
+                Margins.Left = 2.000000000000000000
+                Margins.Top = 2.000000000000000000
+                Margins.Right = 2.000000000000000000
+                Margins.Bottom = 2.000000000000000000
+                Size.Width = 133.000000000000000000
+                Size.Height = 385.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                object vsbTarefaSabado: TVertScrollBox
+                  Align = Client
+                  Size.Width = 133.000000000000000000
+                  Size.Height = 385.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 0
+                  Viewport.Width = 133.000000000000000000
+                  Viewport.Height = 385.000000000000000000
+                end
+              end
+            end
+            object lytContainerDomingo: TLayout
+              Align = Client
+              Size.Width = 323.000000000000000000
+              Size.Height = 439.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 6
+              object lytTituloDomingo: TLayout
+                Align = Top
+                Size.Width = 323.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                object rtcCabecalhoDomingo: TRectangle
+                  Align = Client
+                  Fill.Color = xFFFDB4C8
+                  Margins.Left = 3.000000000000000000
+                  Margins.Top = 3.000000000000000000
+                  Margins.Right = 3.000000000000000000
+                  Margins.Bottom = 3.000000000000000000
+                  Size.Width = 317.000000000000000000
+                  Size.Height = 44.000000000000000000
+                  Size.PlatformDefault = False
+                  Stroke.Kind = None
+                  XRadius = 10.000000000000000000
+                  YRadius = 10.000000000000000000
+                  object lytContainerCabecalhoDomingo: TLayout
+                    Align = Client
+                    Size.Width = 317.000000000000000000
+                    Size.Height = 44.000000000000000000
+                    Size.PlatformDefault = False
+                    TabOrder = 0
+                    object lblTituloDomingo: TLabel
+                      Align = Client
+                      StyledSettings = [Family, Size]
+                      Size.Width = 317.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Domingo'
+                      TabOrder = 0
+                      object Line6: TLine
+                        Align = Bottom
+                        LineType = Bottom
+                        Margins.Left = 2.000000000000000000
+                        Margins.Right = 2.000000000000000000
+                        Margins.Bottom = -3.000000000000000000
+                        Position.X = 2.000000000000000000
+                        Position.Y = 23.000000000000000000
+                        Size.Width = 313.000000000000000000
+                        Size.Height = 2.000000000000000000
+                        Size.PlatformDefault = False
+                        Stroke.Color = claWhite
+                      end
+                    end
+                    object lblTituloDataDomingo: TLabel
+                      Align = Bottom
+                      StyledSettings = [Family, Size]
+                      Position.Y = 22.000000000000000000
+                      Size.Width = 317.000000000000000000
+                      Size.Height = 22.000000000000000000
+                      Size.PlatformDefault = False
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                      TextSettings.FontColor = xFF828282
+                      TextSettings.HorzAlign = Center
+                      Text = 'Dia bla'
+                      TabOrder = 1
+                    end
+                  end
+                end
+              end
+              object rtcTarefasDomingo: TRectangle
+                Align = Client
+                Fill.Color = xFFDBF1FF
+                Margins.Left = 2.000000000000000000
+                Margins.Top = 2.000000000000000000
+                Margins.Right = 4.000000000000000000
+                Margins.Bottom = 2.000000000000000000
+                Size.Width = 317.000000000000000000
+                Size.Height = 385.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Kind = None
+                object vsbTarefaDomingo: TVertScrollBox
+                  Align = Client
+                  Size.Width = 317.000000000000000000
+                  Size.Height = 385.000000000000000000
+                  Size.PlatformDefault = False
+                  TabOrder = 0
+                  Viewport.Width = 317.000000000000000000
+                  Viewport.Height = 385.000000000000000000
+                end
+              end
+            end
+          end
+        end
+      end
+      object lytSuperior: TLayout
+        Align = Top
+        Size.Width = 1145.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object btnVoltarSemana: TSpeedButton
+          Align = Left
+          Size.Width = 73.000000000000000000
+          Size.Height = 41.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'priortoolbutton'
+          OnClick = btnVoltarSemanaClick
+        end
+        object btnProximaSemana: TSpeedButton
+          Align = Right
+          Position.X = 1065.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 41.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'nexttoolbutton'
+          OnClick = btnProximaSemanaClick
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,67 @@
+﻿object frmTotalizadorEsforco: TfrmTotalizadorEsforco
+  Align = Bottom
+  Size.Width = 320.000000000000000000
+  Size.Height = 73.000000000000000000
+  Size.PlatformDefault = False
+  object rtcTotalizadorEsforço: TRectangle
+    Align = Bottom
+    Fill.Color = xFFEAEAEA
+    Size.Width = 320.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claWhite
+    object lblTarefa: TLabel
+      Align = Top
+      StyledSettings = [Family, Size]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Size.Width = 316.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = xFF828282
+      Text = 'Tarefa:'
+      TabOrder = 3
+    end
+    object lblValorTarefa: TLabel
+      Align = Top
+      StyledSettings = [Family, Size, Style]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 17.000000000000000000
+      Size.Width = 316.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = xFF6ABA5A
+      Text = 'CARE 1882'
+      TabOrder = 2
+    end
+    object lblTotalEsforco: TLabel
+      Align = Top
+      StyledSettings = [Family, Size]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 34.000000000000000000
+      Size.Width = 316.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = xFF828282
+      Text = 'Total Esfor'#231'o:'
+      TabOrder = 1
+    end
+    object lblValorTotalEsforco: TLabel
+      Align = Top
+      StyledSettings = [Family, Size, Style]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 51.000000000000000000
+      Size.Width = 316.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = xFF6ABA5A
+      Text = '01:30'
+      TabOrder = 0
+    end
+  end
+end
