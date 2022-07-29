@@ -1,5 +1,5 @@
 # Qual o objetivo?
-O objetivo desse projeto é dar a possibilidade de visualizar as tarefas feitas no dia, podendo assim aprensentar por exemplo na reunião diária do scrum.
+O objetivo desse projeto é dar a possibilidade de visualizar as tarefas feitas no dia, podendo assim apresentar por exemplo na reunião diária do scrum.
 
 # Como configurar?
 Você apenas precisa ter o FireBird 2.5 instalado na máquina e no arquivo "Planner/Win32/Debug/Configuracao.ini" as seguintes configurações:
