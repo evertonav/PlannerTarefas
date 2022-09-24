@@ -10,6 +10,7 @@ uses
 type
   IModelDAOBuscarTarefa = Interface
     ['{0058F9AA-13ED-447A-9A91-F71B193BC1D9}']
+    function UsarDistinct(const pValor: Boolean): IModelDAOBuscarTarefa;
     function DiaTarefa(const pValor: TDate): IModelDAOBuscarTarefa;
     function NomeTarefa(const pValor: string): IModelDAOBuscarTarefa;
     function Executar: TDataSet;
@@ -20,6 +21,7 @@ type
     FDiaTarefa: TDate;
     FQuery: IModelQueryFeature;
     FNomeTarefa: string;
+    FUsarDistinct: Boolean;
 
     function AdicionarWhereSQL(const pSQL: string): string;
   public
@@ -27,6 +29,7 @@ type
 
     class function Criar: IModelDAOBuscarTarefa;
 
+    function UsarDistinct(const pValor: Boolean): IModelDAOBuscarTarefa;
     function DiaTarefa(const pValor: TDate): IModelDAOBuscarTarefa;
     function NomeTarefa(const pValor: string): IModelDAOBuscarTarefa;
     function Executar: TDataSet;
@@ -36,7 +39,8 @@ implementation
 
 uses
   System.SysUtils,
-  VariaveisGlobal;
+  VariaveisGlobal,
+  StrUtils;
 
 { TModelDAOBuscarTarefas }
 
@@ -65,6 +69,7 @@ end;
 
 constructor TModelDAOBuscarTarefas.Create;
 begin
+  FUsarDistinct := False;
   FQuery := TModelQueryFeature.Criar;
   FNomeTarefa := EmptyStr;
   FDiaTarefa := 0;
@@ -91,11 +96,19 @@ const
                                + '  FIM_TAREFA, '
                                + '  TITULO_TAREFA '
                                + 'FROM itens_tarefa ';
+
+  CONST_BUSCAR_TAREFAS_POR_DIA_DISTINCT = 'SELECT DISTINCT '
+                                        //+ '  ID, '
+                                        + '  0 as INICIO_TAREFA, '
+                                        + '  0 as FIM_TAREFA, '
+                                        + '  TITULO_TAREFA '
+                                        + 'FROM itens_tarefa ';
 var
   lSqlBuscarTarefasPorDia: string;
 begin
-  lSqlBuscarTarefasPorDia := AdicionarWhereSQL(CONST_BUSCAR_TAREFAS_POR_DIA)
-                           + ' ORDER BY INICIO_TAREFA';
+  lSqlBuscarTarefasPorDia := AdicionarWhereSQL(
+    IfThen(FUsarDistinct, CONST_BUSCAR_TAREFAS_POR_DIA_DISTINCT, CONST_BUSCAR_TAREFAS_POR_DIA))
+    + ' ORDER BY INICIO_TAREFA';
 
   Result := FQuery
               .Query(VariaveisGlobal.GConexao)
@@ -109,6 +122,14 @@ function TModelDAOBuscarTarefas.NomeTarefa(
   const pValor: string): IModelDAOBuscarTarefa;
 begin
   FNomeTarefa := pValor;
+
+  Result := Self;
+end;
+
+function TModelDAOBuscarTarefas.UsarDistinct(
+  const pValor: Boolean): IModelDAOBuscarTarefa;
+begin
+  FUsarDistinct := pValor;
 
   Result := Self;
 end;

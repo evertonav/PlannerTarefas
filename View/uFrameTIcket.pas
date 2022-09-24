@@ -32,9 +32,11 @@ type
     lblFormato: TLabel;
     ppmFuncoesTicket: TPopupMenu;
     mniCalcularTotalEsforco: TMenuItem;
+    mniMescarTodasTarefas: TMenuItem;
     procedure rbtMinutosClick(Sender: TObject);
     procedure rbtHoraClick(Sender: TObject);
     procedure mniCalcularTotalEsforcoClick(Sender: TObject);
+    procedure mniMescarTodasTarefasClick(Sender: TObject);
   private
     FTarefa: string;
     FFimTarefa: TDate;
@@ -50,6 +52,8 @@ type
     procedure ExecutarProcessoHoraMinutos(const pExecutaHora: Boolean);
     procedure SetIdTarefa(const Value: Integer);
     procedure SetDataTarefa(const Value: TDate);
+
+    procedure MesclarTodasTarefas();
     { Private declarations }
   public
     { Public declarations }
@@ -68,7 +72,11 @@ uses
   Controller.Helper,
   DateUtils,
   Controller.Utils,
-  View.Funcionalidades.InserirTotalizadorEsforco;
+  View.Funcionalidades.InserirTotalizadorEsforco,
+  View.Funcionalidades.InserirTIcketTarefa,
+  Controller.TipoDados.Utils,
+  Data.DB,
+  Controller;
 
 {$R *.fmx}
 
@@ -101,6 +109,44 @@ begin
   end
 end;
 
+procedure TFrameTicket.MesclarTodasTarefas;
+var
+  lItemTarefa: TItensTarefa;
+  lTarefa: TDataSet;
+  lGetTarefas: IController;
+  lReferenciaContainer: TVertScrollBox;
+begin
+  lReferenciaContainer := TVertScrollBox(Self.Parent.Parent);
+
+  TFuncLista.LimparListaFrameTicket(lReferenciaContainer, '');
+
+  lGetTarefas := TController.Criar;
+  lTarefa := lGetTarefas
+               .BuscarTarefas
+               .DiaTarefa(FDataTarefa)
+               .UsarDistinct(True)
+               .Executar;
+
+  lTarefa.First;
+
+  while not lTarefa.Eof do
+  begin
+    lItemTarefa.ID := Random(10000);
+    lItemTarefa.Tarefa := lTarefa.FieldByName('TITULO_TAREFA').AsString;
+    lItemTarefa.InicioTarefa := 0;
+    lItemTarefa.FimTarefa := 0;
+    lItemTarefa.DataTarefa := FDataTarefa;
+
+    TViewFuncionalidadesInserirTicketTarefa
+      .Criar
+      .Container(lReferenciaContainer)
+      .ItemTarefa(lItemTarefa)
+      .Executar;
+
+    lTarefa.Next;
+  end;
+end;
+
 procedure TFrameTicket.mniCalcularTotalEsforcoClick(Sender: TObject);
 begin
   TInserirTotalizadorEsforco
@@ -110,6 +156,11 @@ begin
     .DataTarefas(FDataTarefa)
     .IdTarefa(FIdTarefa)
     .Executar(True);
+end;
+
+procedure TFrameTicket.mniMescarTodasTarefasClick(Sender: TObject);
+begin
+  MesclarTodasTarefas();
 end;
 
 procedure TFrameTicket.MostrarHoraMinutos(const pHabilitarHora: Boolean);
