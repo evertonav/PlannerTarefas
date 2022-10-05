@@ -32,11 +32,11 @@ type
     lblFormato: TLabel;
     ppmFuncoesTicket: TPopupMenu;
     mniCalcularTotalEsforco: TMenuItem;
-    mniMescarTodasTarefas: TMenuItem;
+    mniMarcarComoLida: TMenuItem;
     procedure rbtMinutosClick(Sender: TObject);
     procedure rbtHoraClick(Sender: TObject);
     procedure mniCalcularTotalEsforcoClick(Sender: TObject);
-    procedure mniMescarTodasTarefasClick(Sender: TObject);
+    procedure mniMarcarComoLidaClick(Sender: TObject);
   private
     FTarefa: string;
     FFimTarefa: TDate;
@@ -54,6 +54,11 @@ type
     procedure SetDataTarefa(const Value: TDate);
 
     procedure MesclarTodasTarefas();
+    procedure MarcarTarefaComoLida();
+
+    procedure MudarCorTicket(pLista: TVertScrollBox;
+                             const pNome: string;
+                             const pCor: Cardinal);
     { Private declarations }
   public
     { Public declarations }
@@ -109,6 +114,29 @@ begin
   end
 end;
 
+procedure TFrameTicket.MarcarTarefaComoLida;
+var
+  lTarefa: TDataSet;
+  lGetTarefas: IController;
+begin
+  lGetTarefas := TController.Criar;
+  lTarefa := lGetTarefas
+               .BuscarTarefas
+               .DiaTarefa(FDataTarefa)
+               .NomeTarefa(Tarefa)
+               .Executar;
+
+  lTarefa.First;
+  while not lTarefa.Eof do
+  begin
+    MudarCorTicket(TVertScrollBox(Self.Parent.Parent),
+                   'TFrameTicket_' + lTarefa.FieldByName('Id').AsString,
+                   $FFFFC7B9);
+    
+    lTarefa.Next;
+  end;
+end;
+
 procedure TFrameTicket.MesclarTodasTarefas;
 var
   lItemTarefa: TItensTarefa;
@@ -155,18 +183,44 @@ begin
     .NomeTarefa(FTarefa)
     .DataTarefas(FDataTarefa)
     .IdTarefa(FIdTarefa)
-    .Executar(True);
+    .Executar(False);
 end;
 
-procedure TFrameTicket.mniMescarTodasTarefasClick(Sender: TObject);
+procedure TFrameTicket.mniMarcarComoLidaClick(Sender: TObject);
 begin
-  MesclarTodasTarefas();
+  MarcarTarefaComoLida();
 end;
 
 procedure TFrameTicket.MostrarHoraMinutos(const pHabilitarHora: Boolean);
 begin
   rbtHora.Visible := pHabilitarHora;
   rbtMinutos.Visible := not pHabilitarHora;
+end;
+
+procedure TFrameTicket.MudarCorTicket(pLista: TVertScrollBox;
+  const pNome: string; const pCor: Cardinal);
+var
+  lTotalFilhos: integer;
+  lI: Integer;
+  lReferenciaTicket: TFrameTicket;
+begin
+  pLista.BeginUpdate;
+
+  lTotalFilhos := Pred(pLista.Content.ChildrenCount);
+
+  For lI := lTotalFilhos downto 0 do
+  begin
+    if (pLista.Content.Children[lI] is TFrameTicket) then
+    begin
+      if (pLista.Content.Children[lI].Name = pNome) then
+      begin
+        lReferenciaTicket := (pLista.Content.Children[lI] as TFrameTicket);
+        lReferenciaTicket.rtcContainer.Fill.Color := pCor;
+      end;
+    end;
+  end;
+
+  pLista.EndUpdate;
 end;
 
 procedure TFrameTicket.rbtHoraClick(Sender: TObject);

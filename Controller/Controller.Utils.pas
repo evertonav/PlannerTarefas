@@ -330,6 +330,7 @@ var
   lI: Integer;
   lTotalFilhos: Integer;
 begin
+  Result := False;
   lTotalFilhos := Pred(pContainer.ChildrenCount);
 
   For lI:= lTotalFilhos downto 0 do

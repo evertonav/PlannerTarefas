@@ -75,7 +75,7 @@ begin
 
   if pValidar then
   begin
-    lInserirTotalizador := TVerificarComponente.ExisteComponente(FContainer,
+    lInserirTotalizador := not TVerificarComponente.ExisteComponente(FContainer,
                                                                  frmTotalizadorEsforco)
   end;
 

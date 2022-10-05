@@ -224,9 +224,9 @@
       Text = 'Calcular total esfor'#231'o'
       OnClick = mniCalcularTotalEsforcoClick
     end
-    object mniMescarTodasTarefas: TMenuItem
-      Text = 'Mesclar tarefas (Todas)'
-      OnClick = mniMescarTodasTarefasClick
+    object mniMarcarComoLida: TMenuItem
+      Text = 'Marcar como lida'
+      OnClick = mniMarcarComoLidaClick
     end
   end
 end
